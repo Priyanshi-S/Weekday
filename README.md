@@ -1,0 +1,2 @@
+# Weekday
+Code - Weekday assignment
