@@ -2,6 +2,32 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const absoluteFolders = [
+  'assets',
+  'components',
+  'constants',
+  'hoc',
+  'hooks',
+  'pages',
+  'providers',
+  'routes',
+  'services',
+  'utils',
+];
+
+/**
+ * Method to alias for supporting absolute folder paths
+ * @param {*} subdir
+ * @returns
+ */
+const getAlias = () => {
+  const alias = {};
+  absoluteFolders.forEach(
+    (name) => (alias[`@${name}`] = path.join(__dirname, '../src', name))
+  );
+  return alias;
+};
+
 module.exports = {
   entry: {
     app: './src/index.tsx',
