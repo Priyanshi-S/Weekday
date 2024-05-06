@@ -4,6 +4,7 @@ import { useStyles } from './searchJobComp.styles';
 import SearchSection from '../searchSection';
 import JobSection from '../jobSection';
 import HocComponent from '../hocComponent';
+import {NoDataFound} from '../noDataFound/NoDataFound';
 
 //Api link
 const apiLink = 'https://api.weekday.technology/adhoc/getSampleJdJSON';
@@ -31,8 +32,12 @@ const SearchJob = ({ data, isLoading }: ISearchJob) => {
 
   return (
     <div>
+      
       <SearchSection />
+      {!!jobData.length ?
       <div css={style.data}>{sectionToRender}</div>
+      :
+      <NoDataFound/>}
       {isLoading && <div css={style.loading}>Loading...</div>}
     </div>
   );

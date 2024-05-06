@@ -15,11 +15,6 @@ export const searchData : SearchData= {
       { value: 'dataScience', label: 'Data Science' },
     ],
   },
-  companyName: {
-    name: 'Company Name',
-    options: [],
-    isMulti: false,
-  },
   location: {
     isMulti: true,
     name: 'Location',
@@ -82,6 +77,11 @@ export const searchData : SearchData= {
       { value: '70', label: '70L' },
       { value: '80', label: '80L' },
     ],
+  },
+  companyName: {
+    name: 'Company Name',
+    options: [],
+    isMulti: false,
   },
 };
 

@@ -3,29 +3,26 @@ import { useMemo } from 'react';
 export const useStyles = () => {
   return useMemo(() => {
     return {
-      searchBarWrapper: {
-        width: '50%',
-      },
       inputWrapper: {
-        height: '2.5rem',
-        border: 'none',
-        borderRadius: 10,
-        padding: ' 0 15px',
+        borderRadius: 4,
+        paddingRight: 8,
         boxShadow: '0px 0px 8px #ddd',
-        backgroundColor: 'white',
+        backgroundColor: 'hsl(0, 0%, 100%)',
         display: 'flex',
         alignItems: 'center',
+        border: '1px solid hsl(0, 0%, 80%)',
+        minHeight: 36,
       },
       input: {
         backgroundColor: 'transparent',
-        border: 'none',
         height: '100%',
-        fontSize: '1.25rem',
         width: '100%',
         marginLeft: 5,
         '&:focus-visible': {
           outline: 'none',
         },
+        border: 'none',
+        fontSize:16
       },
       resultsList: {
         backgroundColor: 'white',
@@ -34,6 +31,7 @@ export const useStyles = () => {
         maxHeight: 300,
         marginTop: -2,
         padding: 10,
+        cursor:'pointer'
       },
     } as const;
   }, []);

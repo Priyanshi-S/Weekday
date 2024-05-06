@@ -1,3 +1,4 @@
+import SearchBar from '@components/searchBar';
 import { useStyles } from './searchComp.styles';
 import Select from 'react-select';
 
@@ -13,12 +14,16 @@ export const SearchComp = ({ options, isMulti, name }: ISelectComp) => {
 
   return (
     <div css={style.searchBarWrapper}>
+      {!!options.length ?
       <Select
         isMulti={isMulti}
         name={name}
         options={options}
         placeholder={name}
       />
+      : <SearchBar placeholder={name}/> 
+      //SearchBar to type and upon clicking on result it redirects to google with typed keyword
+      }
     </div>
   );
 };

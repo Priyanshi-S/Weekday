@@ -3,7 +3,12 @@ import { FaSearch } from 'react-icons/fa';
 import { useStyles } from './searchBar.styles';
 import { ImCross } from 'react-icons/im';
 
-export const SearchBar = () => {
+/**
+ * To SearchBar component
+ * @param {string} placeholder
+ * @returns {JSX Element}
+ */
+export const SearchBar = ({placeholder}:ISearchBar) => {
   const [input, setInput] = useState('');
   const style = useStyles();
   const [result, setResult] = useState<any>('');
@@ -44,10 +49,10 @@ export const SearchBar = () => {
   };
 
   return (
-    <div css={style.searchBarWrapper}>
+    <div>
       <div css={style.inputWrapper}>
         <input
-          placeholder="Type to search..."
+          placeholder={placeholder}
           value={input}
           onChange={(e) => handleChange(e.target.value)}
           css={style.input}
@@ -75,3 +80,7 @@ export const SearchBar = () => {
     </div>
   );
 };
+
+interface ISearchBar{
+  placeholder:string;
+}

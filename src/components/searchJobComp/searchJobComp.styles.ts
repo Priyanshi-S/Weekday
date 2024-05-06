@@ -11,7 +11,13 @@ export const useStyles = () => {
         justifyContent: 'space-between',
         margin: 30,
       },
-      loading:{ height: '100%' }
+      loading:{ 
+        height: '100%', 
+        textAlign:'center',
+        fontWeight: 500,
+        fontSize: 16,
+        marginBottom: 40
+    }
     } as const;
   }, []);
 };
